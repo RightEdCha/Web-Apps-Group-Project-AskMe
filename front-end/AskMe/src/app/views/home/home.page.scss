@@ -1,0 +1,9 @@
+$bgColor: #488aff;
+
+.categories {
+	&:hover{
+		background: $bgColor;
+		width:100%;
+		color: white;
+	}
+}

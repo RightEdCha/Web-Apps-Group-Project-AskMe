@@ -1,0 +1,88 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title> Create A Question!</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+
+    <!-- <ion-list> -->
+     <ion-item>
+       <ion-input placeholder="What is Your Question?"  maxlength="255" [(ngModel)]="questionSubmit"> </ion-input>
+     </ion-item>
+   
+     <ion-item>
+         <ion-label *ngIf="!category"> Select a Category</ion-label>
+         <ion-label *ngIf="category==='art'"> Art (Category)</ion-label>
+         <ion-label *ngIf="category==='entertainment'"> Entertainment (Category)</ion-label>
+         <ion-label *ngIf="category==='geography'"> Geography (Category)</ion-label>
+         <ion-label *ngIf="category==='history'"> History (Category)</ion-label>
+         <ion-label *ngIf="category==='relationship'"> Relationship (Category)</ion-label>
+         <ion-label *ngIf="category==='science'"> Science (Category)</ion-label>
+         <ion-label *ngIf="category==='sports'"> Sports (Category)</ion-label>
+         <ion-select class="selector" interface="popover" [(ngModel)]="category">
+           <ion-select-option class="option" value="art">Art</ion-select-option>
+           <ion-select-option class="option" value="entertainment">Entertainment</ion-select-option>
+           <ion-select-option class="option" value="geography">Geography</ion-select-option>
+           <ion-select-option class="option" value="history">History</ion-select-option>
+           <ion-select-option class="option" value="relationship">Relationship</ion-select-option>
+           <ion-select-option class="option" value="science">Science</ion-select-option>
+           <ion-select-option class="option" value="sports">Sports</ion-select-option>
+         </ion-select>
+       </ion-item>
+   
+        <!-- </ion-list> -->
+   
+     <ion-item>
+       <ion-label *ngIf="!numberAnswers"> Select the Number of Answers</ion-label>
+       <ion-label *ngIf="numberAnswers==='two'"> 2 (# of Answers)</ion-label>
+       <ion-label *ngIf="numberAnswers==='three'"> 3 (# of Answers)</ion-label>
+       <ion-label *ngIf="numberAnswers==='four'"> 4 (# of Answers)</ion-label>
+       <ion-select interface="popover" [(ngModel)]="numberAnswers">
+         <ion-select-option value="2">2</ion-select-option>
+         <ion-select-option value="3">3</ion-select-option>
+         <ion-select-option value="4">4</ion-select-option>
+       </ion-select>
+     </ion-item>
+   
+     <ion-list *ngIf="numberAnswers === '2'">
+       <ion-item>
+       <ion-input placeholder="Answer Choice 1" maxlength="255" [(ngModel)]="answer1" type="answer1"> </ion-input>
+       </ion-item>
+       <ion-item>
+       <ion-input placeholder="Answer Choice 2" maxlength="255" [(ngModel)]="answer2" type="answer2"> </ion-input>
+       </ion-item>
+    </ion-list>
+     <ion-list *ngIf="numberAnswers === '3'">
+       <ion-item>
+       <ion-input placeholder="Answer Choice 1" maxlength="255" [(ngModel)]="answer1" type="answer1"> </ion-input>
+       </ion-item>
+       <ion-item>
+       <ion-input placeholder="Answer Choice 2" maxlength="255" [(ngModel)]="answer2" type="answer2"> </ion-input>
+       </ion-item>
+       <ion-item>
+       <ion-input placeholder="Answer Choice 3" maxlength="255" [(ngModel)]="answer3" type="answer3"> </ion-input>
+       </ion-item>
+     </ion-list>
+     <ion-list *ngIf="numberAnswers === '4'">
+       <ion-item>
+       <ion-input placeholder="Answer Choice 1" maxlength="255" [(ngModel)]="answer1" type="answer1"> </ion-input>
+       </ion-item>
+       <ion-item>
+       <ion-input placeholder="Answer Choice 2" maxlength="255" [(ngModel)]="answer2" type="answer2"> </ion-input>
+       </ion-item>
+       <ion-item>
+       <ion-input placeholder="Answer Choice 3" maxlength="255" [(ngModel)]="answer3" type="answer3"> </ion-input>
+       </ion-item>
+       <ion-item>
+       <ion-input placeholder="Answer Choice 4"  [(ngModel)]="answer4" type="answer4"> </ion-input>
+       </ion-item>
+     </ion-list>
+   <!-- </ion-list> -->
+   
+   <ion-button id="submit" (click) = createQuestion()> Submit Question </ion-button>
+
+</ion-content>

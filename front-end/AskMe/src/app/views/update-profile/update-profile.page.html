@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Update Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+
+    <!-- <ion-item>
+        <ion-input placeholder="Username" [(ngModel)]="username" ></ion-input>
+      </ion-item>
+   -->
+      <!-- <h3> First Name: {{ userData.fname }}</h3> -->
+      <ion-text color="primary">
+          <h4>First Name: {{ userData.fname }} </h4>
+      </ion-text>
+
+      <ion-item>
+        <ion-input placeholder="First Name" [(ngModel)]="firstName" ></ion-input>
+      </ion-item>
+  
+      <ion-text color="primary">
+          <h4>Last Name: {{ userData.lname }} </h4>
+      </ion-text>
+      <ion-item>
+          <ion-input placeholder="Last Name" [(ngModel)]="lastName"></ion-input>
+      </ion-item>
+
+
+      <ion-text color="primary">
+          <h4>Email: {{ userData.email }} </h4>
+      </ion-text>
+      <ion-item>
+          <ion-input placeholder="Email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+
+      <ion-text color="primary">
+          <h4>Password</h4>
+      </ion-text>
+      <ion-item>
+          <ion-input placeholder="Password" [(ngModel)]="password" type="password"></ion-input>
+      </ion-item>
+
+      <ion-button  color="primary" size="default" (click)="updateUserInfo()">Update Profile</ion-button>
+</ion-content>

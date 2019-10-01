@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{category}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+    <ion-item *ngFor="let q of questions">
+      <ion-buttons slot="end">
+        <ion-button href="home/1" id="{{q.questionId}}" (click)="remove($event)" color="" *appHasRole="['admin']">
+          <ion-label>Remove</ion-label>
+        </ion-button>
+        <ion-button href="home/1" id="{{q.questionId}}" (click)="setFeature($event)" color="" *appHasRole="['admin']">
+          <ion-label>Feature</ion-label>
+        </ion-button>
+        <ion-button href="questionView/{{q.questionId}}">
+          <ion-label>View Question</ion-label>
+       </ion-button>
+      </ion-buttons>
+      {{q.questionText}}
+    </ion-item>
+  </ion-list>
+</ion-content>

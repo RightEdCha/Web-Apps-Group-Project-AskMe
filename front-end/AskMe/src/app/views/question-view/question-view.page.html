@@ -1,0 +1,61 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title></ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" size-sm>
+          <ion-card>
+            <ion-item>
+              <ion-card-header>
+                <ion-card-title>Question: </ion-card-title>
+              </ion-card-header>
+            </ion-item>
+            <ion-card-content id="question">
+              <ion-item id = "QuestionText">
+                <ion-content>{{question.questionText}}</ion-content>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+            <ion-card height="200" width="200" *ngIf="question.closed">
+                <ion-card-header>
+                  <ion-card-title>Answers:</ion-card-title>
+                  <ion-item>
+                      <ion-label>View</ion-label>
+                      <ion-toggle (ionChange) = "changeView()" slot="start" [(ngModel)]="view"></ion-toggle>
+                    </ion-item>
+                </ion-card-header>
+                <ion-card-content>
+                  <canvas #Canvas></canvas>
+                </ion-card-content>
+              </ion-card>
+            <ion-card *ngIf="!question.closed">
+                <ion-item>
+                  <ion-card-header>
+                    <ion-card-title>Vote: </ion-card-title>
+                  </ion-card-header>
+                </ion-item>
+                <ion-card-content>
+                  <ion-radio-group>
+                     <ion-item *ngFor="let a of question.answers">
+                      <ion-label>{{a.answerText}}</ion-label>
+                      <ion-radio (ionSelect)="setAnswer($event)" id={{a.answerText}} slot="start"></ion-radio>
+                    </ion-item>
+                  </ion-radio-group> 
+                  <ion-button href="home" color="primary" (click) = "submitAnswer()">Submit Answer</ion-button>
+                </ion-card-content>
+            </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>

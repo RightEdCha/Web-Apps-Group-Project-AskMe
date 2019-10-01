@@ -1,0 +1,14 @@
+com\AskMe\dao\UserDAO.class
+com\AskMe\database\databaseConnection.class
+com\AskMe\dao\AnswerDAO.class
+com\AskMe\rest\AnswerController.class
+com\AskMe\model\Answer.class
+com\AskMe\rest\QuestionController.class
+com\AskMe\rest\UserController.class
+com\AskMe\rest\AnswerService.class
+com\AskMe\rest\UserService.class
+com\AskMe\model\User.class
+com\AskMe\dao\QuestionDAO.class
+com\AskMe\model\Question.class
+com\AskMe\app\Application.class
+com\AskMe\rest\QuestionService.class

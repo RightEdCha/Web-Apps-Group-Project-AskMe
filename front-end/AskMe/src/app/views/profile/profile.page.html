@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Update Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item *ngIf="!lol">
+    stuff
+  </ion-item>
+      <ion-card height="200" width="200" *ngIf="lol">
+          <ion-card-header>
+            Bar Chart
+          </ion-card-header>
+          <ion-card-content>
+            <canvas #Canvas></canvas>
+          </ion-card-content>
+        </ion-card>
+</ion-content>
+
+
+
+
